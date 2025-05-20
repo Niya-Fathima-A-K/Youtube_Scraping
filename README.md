@@ -11,12 +11,12 @@ API key is now ready
 
 
 ## Sraping metadata to csv file
-***Importing Neccessary librairies ***
+***Importing Neccessary librairies***
 ```python
 from googleapiclient.discovery import build
 import pandas as pd
 ```
-*** Scraping data  ***
+***Scraping data***
 1. Set bup API using build() from google.client.discovery. 
 using search of function video data of 50 videos are requested. 
 from the respose video id object is created which contains video ids of the 50 videos
@@ -28,7 +28,7 @@ request=youtube.search().list(q="Skincare",part='snippet',maxResults=50,type='vi
 video_id=[item["id"]["videoId"] for item in request["items"]]
 video_request=youtube.videos().list(part="snippet,statistics,contentDetails",id=",".join(video_id)).execute()
 ```
-***creating datframe of meta data and saving into csv file ***
+***creating datframe of meta data and saving into csv file***
 The metadata 
 1. Title
 2. Channel	
